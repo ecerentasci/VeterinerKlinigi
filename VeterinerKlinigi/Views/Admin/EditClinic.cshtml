@@ -1,0 +1,60 @@
+@model VeterinerKlinigi.Models.Clinic
+
+@{
+    ViewData["Title"] = "Klinik Düzenle";
+}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Klinik Düzenle</h1>
+
+            <form asp-action="EditClinic" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Klinik Adı</label>
+                    <input asp-for="Name" class="form-control" required />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Address" class="form-label">Adres</label>
+                    <input asp-for="Address" class="form-control" required />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Phone" class="form-label">Telefon</label>
+                    <input asp-for="Phone" class="form-control" required />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" required />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="OpeningTime" class="form-label">Açılış Saati</label>
+                        <input asp-for="OpeningTime" type="time" class="form-control" required />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="ClosingTime" class="form-label">Kapanış Saati</label>
+                        <input asp-for="ClosingTime" type="time" class="form-control" required />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+                <a asp-action="Clinics" class="btn btn-secondary">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

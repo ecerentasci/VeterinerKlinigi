@@ -1,0 +1,25 @@
+@model VeterinerKlinigi.Models.Veterinarian
+
+@{
+    ViewData["Title"] = "Veteriner Hekim Sil";
+}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-danger">Veteriner Hekimi Silmek İstediğinize Emin Misiniz?</h3>
+
+            <div class="alert alert-warning">
+                <p><strong>Ad Soyad:</strong> @Model.FirstName @Model.LastName</p>
+                <p><strong>Lisans No:</strong> @Model.LicenseNumber</p>
+                <p><strong>Klinik:</strong> @Model.Clinic.Name</p>
+            </div>
+
+            <form asp-action="DeleteVeterinarian" method="post">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger">Sil</button>
+                <a asp-action="Veterinarians" class="btn btn-secondary">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>

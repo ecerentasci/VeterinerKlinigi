@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Admin Paneli";
+}
+
+<div class="container my-5">
+    <h1 class="mb-4">Admin Paneli</h1>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Klinikler</h5>
+                    <p class="card-text">Veteriner klinikleri yönet</p>
+                    <a href="@Url.Action("Clinics")" class="btn btn-primary">Yönet</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Veteriner Hekimler</h5>
+                    <p class="card-text">Hekim bilgilerini düzenle</p>
+                    <a href="@Url.Action("Veterinarians")" class="btn btn-primary">Yönet</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Hizmetler</h5>
+                    <p class="card-text">Kliniğin hizmetlerini yönet</p>
+                    <a href="@Url.Action("Services")" class="btn btn-primary">Yönet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
